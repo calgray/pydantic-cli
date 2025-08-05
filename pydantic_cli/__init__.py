@@ -119,14 +119,14 @@ def _add_pydantic_field_to_parser(
         args = TypeAdapter(tuple[str, ...]).validate_python(cli)
     else:
         # positional if required, else named optional
-        args = () if is_required else (f"{long_prefix}{field_id}",)
+        args = () if is_required else (f"{long_prefix}{field_id.replace('_', '-')}",)
 
     # Delete cli and json_schema_extras metadata isn't in FieldInfo and won't be displayed
     # Not sure if this is the correct, or expected behavior.
     cfield_info = deepcopy(field_info)
     cfield_info.json_schema_extra = None
     # write this to keep backward compat with 3.10
-    help_ = field_info.description or "".join(["Field(", field_info.__repr_str__(", "), ")"])
+    help_ = field_info.description or f'Field({field_info.__repr_str__(", ")})'
 
     kwargs: dict[str, Any] = {}
     if is_sequence:

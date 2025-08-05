@@ -18,11 +18,11 @@ class TestExamples(_TestHarness[Options]):
 
     def test_simple_02(self):
         self.run_config(
-            ["-i", "/path/to/file.txt", "-m", "1234", "--log_level", "INFO"]
+            ["-i", "/path/to/file.txt", "-m", "1234", "--log-level", "INFO"]
         )
 
     def test_simple_03(self):
         self.run_config(
-            ["-i", "/path/to/file.txt", "-m", "1234", "--log_level", "BAD_LOG_LEVEL"],
+            ["-i", "/path/to/file.txt", "-m", "1234", "--log-level", "BAD_LOG_LEVEL"],
             exit_code=1,
         )

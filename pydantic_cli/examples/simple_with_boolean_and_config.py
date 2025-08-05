@@ -3,7 +3,7 @@ Simple Example of using Pydantic to generate a CLI
 
 This example will generate a CLI tool with 1 required argument and one optional boolean arg.
 
-Note the optional boolean value must be supplied as `--run_training False`
+Note the optional boolean value must be supplied as `--run-training False`
 """
 
 from pydantic import Field
