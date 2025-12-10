@@ -14,7 +14,7 @@ class TestExamples(_TestHarness[Options]):
     CONFIG = HarnessConfig(Options)
 
     def test_simple_01(self):
-        self.run_config(["--input_file", "/path/to/file.txt", "--max_record", "1234"])
+        self.run_config(["--input-file", "/path/to/file.txt", "--max-record", "1234"])
 
     def test_simple_02(self):
         t = NamedTemporaryFile(mode="w", delete=True)
@@ -25,5 +25,5 @@ class TestExamples(_TestHarness[Options]):
 
         env_var = "PCLI_JSON_CONFIG"
         os.environ.setdefault(env_var, t.name)
-        self.run_config(["--input_file", "/path/to/file.txt", "--max_record", "1234"])
+        self.run_config(["--input-file", "/path/to/file.txt", "--max-record", "1234"])
         os.environ.pop(env_var)

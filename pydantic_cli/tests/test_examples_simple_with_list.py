@@ -9,10 +9,10 @@ class TestExamples(_TestHarness[Options]):
 
     def test_simple_01(self):
         args = [
-            "--input_file",
+            "--input-file",
             "/path/to/file.txt",
             "/and/another/file.txt",
-            "--max_records",
+            "--max-records",
             "1234",
             "--filters",
             "alpha",

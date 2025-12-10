@@ -21,7 +21,7 @@ class Options(Cmd):
         cli_json_validate_path=False,
     )
 
-    input_file: str = Field(cli=("--input_file",))
+    input_file: str = Field(cli=("--input-file",))
     max_records: int = 10
 
     def run(self) -> None:

@@ -43,7 +43,7 @@ https://docs.pydantic.dev/2.8/concepts/pydantic_settings/#settings-management
 To create a commandline tool that takes an input file and max number of records to process as arguments:
 
 ```bash
-my-tool --input_file /path/to/file.txt --max_records 1234
+my-tool --input-file /path/to/file.txt --max-records 1234
 ```
 
 This requires two components.
@@ -188,7 +188,7 @@ To override values in the JSON config file, or provide the missing required valu
 These values **will override** values defined in the JSON config file. The provides a general mechanism of using configuration "preset" files. 
 
 ```bash
-my-tool --json-training /path/to/file.json --alpha -1.8 --max_records 100 
+my-tool --json-training /path/to/file.json --alpha -1.8 --max-records 100 
 ```
 
 Similarly, a partially described data model can be used combined with explict values provided at the commandline.
@@ -490,7 +490,7 @@ Completed writing zsh shell output to stdout
  -- option --
 --max_filter_score  --  (type:int default:1.0)
 --max_length        --  (type:int default:12)
---max_records       --  (type:int default:123455)
+--max-records       --  (type:int default:123455)
 --max_size          --  (type:int default:13)
 ```
 
@@ -619,7 +619,7 @@ class MinOptions(Cmd):
 And the vanilla case running from the command line works as expected.
 
 ```bash
-my-tool /path/to/file.txt /path/to/file.h5 --max_records 200
+my-tool /path/to/file.txt /path/to/file.h5 --max-records 200
 ```
 
 However, when using the JSON "preset" feature, there are potential problems where the positional arguments of the tool are shifting around depending on what fields have been defined in the JSON preset.

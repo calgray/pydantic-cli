@@ -10,15 +10,15 @@ class TestExamples(_TestHarness[Options]):
         self.run_config(["/path/to/file.txt"])
 
     def test_simple_02(self):
-        self.run_config(["/path/to/file.txt", "--run_training", "y"])
+        self.run_config(["/path/to/file.txt", "--run-training", "y"])
 
     def test_simple_03(self):
         self.run_config(
             [
                 "/path/to/file.txt",
-                "--run_training",
+                "--run-training",
                 "true",
-                "--dry_run",
+                "--dry-run",
                 "true",
             ]
         )

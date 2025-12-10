@@ -5,7 +5,7 @@ This example will generate a CLI tool with 2 **required** arguments
 and can be called
 
 ```bash
-my-tool --input_file file.fasta file2.fasta --max_records 10
+my-tool --input-file file.fasta file2.fasta --max-records 10
 ```
 """
 
@@ -14,9 +14,9 @@ from pydantic_cli import run_and_exit, Cmd
 
 
 class Options(Cmd):
-    input_file: list[str] = Field(cli=("--input_file",))
+    input_file: list[str] = Field(cli=("--input-file",))
     filters: set[str] = Field(cli=("--filters",))
-    max_records: int = Field(cli=("--max_records",))
+    max_records: int = Field(cli=("--max-records",))
 
     def run(self) -> None:
         print(f"Mock example running with {self}")
